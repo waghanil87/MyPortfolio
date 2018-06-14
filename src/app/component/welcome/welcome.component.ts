@@ -14,6 +14,7 @@ export class WelcomeComponent implements OnInit {
 	}
 
 	goHome() {
+		console.log('sdfljsldfjs');
 	    this.router.navigate(['home']); 
 	}
  	getRandomColor() {
@@ -28,7 +29,7 @@ export class WelcomeComponent implements OnInit {
 	  	let w = window.innerWidth;
 	    let h =window.innerHeight;
 
-	    for (let i=0; i<150; i++){
+	    for (let i=0; i<200; i++){
 		    let div = document.createElement("div");
 		    div.style.background = this.getRandomColor().toString();
 		    div.style.top =Math.round(Math.random() * h-10) + "px";
@@ -38,7 +39,7 @@ export class WelcomeComponent implements OnInit {
 	    // make some waves.
 		let ocean = document.getElementById("ocean"),
 	    waveWidth = 10,
-	    waveCount = Math.floor(window.innerWidth/waveWidth),
+	    waveCount = Math.floor(window.innerWidth/waveWidth) +1,
 	    docFrag = document.createDocumentFragment();
 
 		for(let i = 0; i < waveCount; i++){
