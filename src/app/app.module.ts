@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './component/welcome/welcome.component';
 import { HomeComponent } from './component/home/home.component';
 
+import { GalaxyBackgroundService } from './service/galaxy-background/galaxy-background.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,7 @@ import { HomeComponent } from './component/home/home.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ GalaxyBackgroundService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

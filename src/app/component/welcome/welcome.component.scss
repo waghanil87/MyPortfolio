@@ -11,7 +11,155 @@
 	  	.center-centent {
 		  	margin-left: auto;
 		  	margin-right: auto;
-		  	width: 400px; /*default width*/
+		  	width: 60%; /*default width*/
 		}
 	}
+}
+/*--------------- Global style----------*/
+/*____variables_______*/
+
+$color-navyBlueDark: rgb(12, 38, 56);
+$color-navyBlueLight: rgb(4, 37, 53);
+
+@mixin textAnimation($color1, $color2){
+    background: linear-gradient(to right, $color1 20%, $color2 40%, $color1 60%, $color2 80%, $color1 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+    animation: shine 12s linear infinite;
+}
+h1{
+    font-family: sans-serif;
+    font-size:2.5em;
+    @include textAnimation(#fff, #555);
+}
+
+body{
+	margin:0;
+	position: relative;
+}
+#wrapper{
+	width: 100%;
+	height: 100vh;
+	
+    background: linear-gradient(to right, rgba(12,38,56,1) 0%, rgba(17,65,87,1) 50%, rgba(17,65,87,1) 51%, rgba(12,38,56,1) 100%);
+	overflow: hidden;
+}
+#wrapper div{
+	position:relative;
+	animation-name: easingBubble;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	width: 3px;
+	height: 3px;
+}
+#wrapper >div:nth-child(even){
+	animation-delay:2s;
+}
+#wrapper >div:nth-child(3n+0){
+	animation-delay:3s;
+}
+#wrapper >div:nth-child(5n+0){
+	animation-delay:4s;
+}
+$prefixes: ("-moz-", "-webkit-", "-o-", "");
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+
+/*---welcome Page---*/
+
+.highlight-text{
+    color:#d66e65;
+    @include textAnimation(#05a0c1, #b2f9dd);
+
+}
+/*---End Welcome Page---*/
+@mixin easInOut{
+    from{
+        animation-timing-function: ease;
+        opacity: 1
+    }
+    50%{
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    to{
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+}
+@keyframes easingBubble
+{
+   @include easInOut; 
+}
+
+
+
+/*wave -----*/
+body{
+		height:auto;
+		margin:0;
+}
+button, .button {     
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;   
+    border: 2px solid #ddd;
+    padding: 10px;     
+    color:#ddd;
+    font-family: monospace;
+    font-size:18px;
+}
+button:after{
+    font-family: initial;
+	content: ' \21DB';
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 20px;
+    background: rgba(0,0,0,0.3);
+    width: 20px;
+    padding: 2px 4px 3px 0;
+    margin-left: 5px;
+	
+}
+#ocean{
+    position: absolute;
+    bottom: 0;
+    transform: rotate(180deg);
+    width: 100%;
+    min-height: 40%;
+}
+
+.wave{
+  background:#00BEA6 -webkit-gradient(linear, left top, left bottom, from(#0057BE), to(#00BEA6)) no-repeat;
+  opacity:0.1;
+  display:inline-block;
+  height:60%;
+  width:10px;
+  position:absolute;
+  -webkit-animation-name:             dostuff; 
+  -webkit-animation-duration:         3s; 
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+
+@-webkit-keyframes dostuff{
+    0%{
+        height:60%;
+    }
+    50%{ 
+        height:40%;
+    }
+    100%{ 
+        height:60%;
+    }
 }
