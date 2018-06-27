@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './component/welcome/welcome.component';
 import { HomeComponent } from './component/home/home.component';
 
-import { GalaxyBackgroundService } from './service/galaxy-background/galaxy-background.service'
+import { GalaxyBackgroundService } from './service/galaxy-background/galaxy-background.service';
+import { TabsComponent } from './tabs/tabs.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    HomeComponent
+    HomeComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
